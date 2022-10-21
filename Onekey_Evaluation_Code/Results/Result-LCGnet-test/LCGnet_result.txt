@@ -1,0 +1,1 @@
+(Dataset:LCGnet; Model:2021-CVPR-LCGNet) Smeasure:0.489; wFmeasure:0.062;MAE:0.065; adpEm:0.699; meanEm:0.325; maxEm:0.789; adpFm:0.307; meanFm:0.078; maxFm:0.320.

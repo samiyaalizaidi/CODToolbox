@@ -3,16 +3,20 @@ close all;
 clc;
 
 % ---- 1. CamouflageMap Path Setting ----
-SalMapPath = '../CamMap/';   % Put model results in this folder.
-Models = {'2020-CVPR-SINet'};   % You can add other model like: Models = {'2019-ICCV-EGNet','2019-CVPR-CPD'};
+%SalMapPath = '../CamMap/';   % Put model results in this folder%
+SalMapPath = 'C:/Animal dataset/COD Research/CODToolbox/Onekey_Evaluation_Code/CamMap/';% Put model results in this folder%
+%C:/Animal dataset/COD Research/CODToolbox/Onekey_Evaluation_Code/CamMap/
+Models = {'2021-CVPR-LCGNet'}; %{'2020-CVPR-SINet'};   % You can add other model like: Models = {'2019-ICCV-EGNet','2019-CVPR-CPD'};
 modelNum = length(Models);
 
 % ---- 2. Ground-truth Datasets Setting ----
-DataPath = '../CamDataset/';
-Datasets = {'COD10K'};  % You may also need other datasets, such as Datasets = {'CAMO','CPD1K'};
+%DataPath = '../CamDataset/';
+DataPath = 'C:/Animal dataset/COD Research/CODToolbox/Onekey_Evaluation_Code/CamDataset/';
+Datasets = {'LCGnet'}; % {'COD10K'};  % You may also need other datasets, such as Datasets = {'CAMO','CPD1K'};
 
 % ---- 3. Results Save Path Setting ----
-ResDir = '../Results/Result-COD10K-test/';
+%ResDir = '../Results/Result-COD10K-test/';
+ResDir = 'C:/Animal dataset/COD Research/CODToolbox/Onekey_Evaluation_Code/Results/Result-LCGnet-test/';
 ResName='_result.txt';  % You can change the result name.
 
 Thresholds = 1:-1/255:0;
