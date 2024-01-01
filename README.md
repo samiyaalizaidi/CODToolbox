@@ -1,20 +1,16 @@
-# Camouflaged Object Detection, accepted by oral presentation in CVPR-2020.
+# Camouflaged Object Detection Evaluation Toolkit
 
-> Deng-Ping Fan, Ge-Peng Ji, Guolei Sun, Ming-Ming Cheng, Jianbing Shen, Ling Shao.
+> Original work by Deng-Ping Fan, Ge-Peng Ji, Guolei Sun, Ming-Ming Cheng, Jianbing Shen, Ling Shao.
 
+1. Usage Instructions for Binary Mask Evaluation
 
-### 0. :fire: NEWS :fire:
-- [2020/12/04] :boom: Pytohon verion: https://github.com/lartpang/PySODMetrics.
-- [2020/11/26] :boom: Updating one bug in main.m file to ensure the max value is less than 1. 
-``threshold =  2* mean(sal(:)); -》 threshold = min(2 * mean2(sal), 1);'' 
+    To use this repository for evaluating a binary mask output from a model prediction against the original ground truth binary masks, follow these steps:
 
-1. **S**earch and **I**dentification **Net**work (**SINet**)
+    - Place all the ground truth binary masks inside the `GroundTruth` directory.
+    - Put the model's output prediction of binary masks in the `Predictions` directory.
+    - Before running the evaluation code, update the required directory paths in the `main.m` file for accurate evaluation.
 
-2. Project Website: http://dpfan.net/Camouflage/
-
-3. Code: https://github.com/DengPingFan/SINet
-
-4. Any question please contact to me: _gepengai.ji@gmail.com_ or open new issue in the GitHub)
+    Run the evaluation code for accurate assessment.
 
 5. Evaluation Configuration
 
