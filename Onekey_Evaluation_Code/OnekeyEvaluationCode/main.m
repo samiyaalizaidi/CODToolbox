@@ -4,14 +4,13 @@ clc;
 
 % ---- 1. CamouflageMap Path Setting ----
 %SalMapPath = '../CamMap/';   % Put model results in this folder%
-SalMapPath = 'C:/Animal dataset/COD Research/CODToolbox/Onekey_Evaluation_Code/CamMap/';% Put model results in this folder%
-%C:/Animal dataset/COD Research/CODToolbox/Onekey_Evaluation_Code/CamMap/
+SalMapPath = 'C:/Animal dataset/COD Research/CODToolbox/Onekey_Evaluation_Code/Predictions/';% Put model results in this folder%
 Models = {'2021-CVPR-LCGNet'}; %{'2020-CVPR-SINet'};   % You can add other model like: Models = {'2019-ICCV-EGNet','2019-CVPR-CPD'};
 modelNum = length(Models);
 
 % ---- 2. Ground-truth Datasets Setting ----
 %DataPath = '../CamDataset/';
-DataPath = 'C:/Animal dataset/COD Research/CODToolbox/Onekey_Evaluation_Code/CamDataset/';
+DataPath = 'C:/Animal dataset/COD Research/CODToolbox/Onekey_Evaluation_Code/GroundTruth/';
 Datasets = {'LCGnet'}; % {'COD10K'};  % You may also need other datasets, such as Datasets = {'CAMO','CPD1K'};
 
 % ---- 3. Results Save Path Setting ----
