@@ -4,19 +4,19 @@ clc;
 
 % ---- 1. CamouflageMap Path Setting ----
 %SalMapPath = '../CamMap/';   % Put model results in this folder%
-SalMapPath = 'C:/Animal dataset/COD Research/CODToolbox/Onekey_Evaluation_Code/Predictions/';% Put model results in this folder%
-Models = {'2021-CVPR-LCGNet'}; %{'2020-CVPR-SINet'};   % You can add other model like: Models = {'2019-ICCV-EGNet','2019-CVPR-CPD'};
+SalMapPath = "D:\COD10k_Dataset_for_Evaluation\Xlarge_Gts\";% Put model results in this folder%
+Models = {'Xlarge_Gts'}; %{'2020-CVPR-SINet'};   % You can add other model like: Models = {'2019-ICCV-EGNet','2019-CVPR-CPD'};
 modelNum = length(Models);
 
 % ---- 2. Ground-truth Datasets Setting ----
 %DataPath = '../CamDataset/';
-DataPath = 'C:/Animal dataset/COD Research/CODToolbox/Onekey_Evaluation_Code/GroundTruth/';
-Datasets = {'LCGnet'}; % {'COD10K'};  % You may also need other datasets, such as Datasets = {'CAMO','CPD1K'};
+DataPath = "D:\COD10k_Dataset_for_Evaluation\GTs";
+Datasets = {'GTs'}; % {'COD10K'};  % You may also need other datasets, such as Datasets = {'CAMO','CPD1K'};
 
 % ---- 3. Results Save Path Setting ----
 %ResDir = '../Results/Result-COD10K-test/';
-ResDir = 'C:/Animal dataset/COD Research/CODToolbox/Onekey_Evaluation_Code/Results/Result-LCGnet-test/';
-ResName='_result.txt';  % You can change the result name.
+ResDir = 'C:\Users\User\Desktop\result\';
+ResName='v8x_result.txt';  % You can change the result name.
 
 Thresholds = 1:-1/255:0;
 datasetNum = length(Datasets);
@@ -38,7 +38,11 @@ for d = 1:datasetNum
         model = Models{m}   % print cur model name
 
         gtPath = [DataPath dataset '/'];
-        salPath = [SalMapPath model '/' dataset '/'];
+        salPath = [SalMapPath model '/'];   
+
+        salPath = fullfile(salPath{:});
+        gtPath = fullfile(gtPath{:});
+        disp(salPath);
         
         imgFiles = dir([salPath '*.png']);  
         imgNUM = length(imgFiles);
@@ -56,7 +60,11 @@ for d = 1:datasetNum
             name =  imgFiles(i).name;
             
             %load gt
+            disp(gtPath);
+            disp(name);
             gt = imread([gtPath name]);
+
+            
             
             if (ndims(gt)>2)
                 gt = rgb2gray(gt);
