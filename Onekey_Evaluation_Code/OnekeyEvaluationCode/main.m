@@ -42,7 +42,6 @@ for d = 1:datasetNum
 
         salPath = fullfile(salPath{:});
         gtPath = fullfile(gtPath{:});
-        disp(salPath);
         
         imgFiles = dir([salPath '*.png']);  
         imgNUM = length(imgFiles);
@@ -60,12 +59,9 @@ for d = 1:datasetNum
             name =  imgFiles(i).name;
             
             %load gt
-            disp(gtPath);
-            disp(name);
             gt = imread([gtPath name]);
 
-            
-            
+                        
             if (ndims(gt)>2)
                 gt = rgb2gray(gt);
             end
